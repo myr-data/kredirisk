@@ -1,8 +1,0 @@
-artifact_location: file:d:/Codes/ML Credit Risk/mlruns/225392139514058556
-creation_time: 1778490450129
-experiment_id: '225392139514058556'
-last_update_time: 1778490450129
-lifecycle_stage: active
-name: credit-risk-models
-trace_location: null
-workspace: default
