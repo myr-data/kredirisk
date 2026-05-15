@@ -1,0 +1,27 @@
+name: ML API CI
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t credit-risk-api ./project
+
+      - name: Run container
+        run: |
+          docker run -d -p 8000:8000 --name api credit-risk-api
+          sleep 10
+
+      - name: Health check
+        run: curl -f http://localhost:8000/
+
+      - name: Stop container
+        run: docker stop api
