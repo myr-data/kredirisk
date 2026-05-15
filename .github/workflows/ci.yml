@@ -20,10 +20,20 @@ jobs:
           docker run -d -p 8000:8000 --name api credit-risk-api
           sleep 10
 
-      - name: Health check
-        run: curl -f http://localhost:8000/
+      - name: Wait for API + Health check
+        run: |
+          for i in {1..15}; do
+            curl -f http://localhost:8000/ && exit 0
+            echo "waiting..."
+            sleep 2
+          done
+
+          echo "FAILED - container logs:"
+          docker logs api
+          exit 1
 
       - name: Show container logs
+        if: always()
         run: docker logs api
 
       - name: Stop container
