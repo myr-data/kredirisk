@@ -5,14 +5,14 @@
     $ docker run --name credit-risk-container -p 8000:8000 credit-risk-api
 
 3. output will contain:
-INFO:   Uvicorn running on http://0.0.0.0:8000
+INFO:   Uvicorn running on http://localhost:8000
     - use this url in chrome to see model frontend
     - use for testing the model
 
 4. Query model
 
     4.1 Via web interface (chrome):
-        http://0.0.0.0:8000/docs -> test model
+        http://localhost:8000/docs -> test model
     
     4.2 Via python client:
         client.py
