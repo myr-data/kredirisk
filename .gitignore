@@ -1,9 +1,9 @@
 mlruns/
 models/
-!project/app/models/
-!project/app/models/best_model_xgboost.pkl
 catboost_info/
 __pycache__/
 *.pkl
 *.joblib
 .ipynb_checkpoints/
+!project/app/models/
+!project/app/models/best_model_xgboost.pkl
